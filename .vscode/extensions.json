@@ -1,0 +1,26 @@
+{
+	"recommendations": [
+		//* Theme:
+		"johnpapa.winteriscoming",
+		//* Python:
+		"donjayamanne.python-extension-pack",
+		"ms-python.python",
+		"donjayamanne.python-environment-manager",
+		//* Jupyter:
+		"ms-toolsai.jupyter",
+		//* Helpers:
+		"KevinRose.vsc-python-indent",
+		"njpwerner.autodocstring",
+		"aaron-bond.better-comments",
+		"rssowl.copy-relative-path-posix",
+		"formulahendry.code-runner",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"rvest.vs-code-prettier-eslint",
+		"eamodio.gitlens",
+		"VisualStudioExptTeam.vscodeintellicode",
+		"VisualStudioExptTeam.vscodeintellicode",
+		"PKief.material-icon-theme",
+		"christian-kohler.path-intellisense"
+	]
+}
