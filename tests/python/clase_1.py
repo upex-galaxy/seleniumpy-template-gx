@@ -6,34 +6,37 @@ b = 1212.2323  # Float
 c = "Hola que onda"  # String
 d = True  # Boolean
 e = False  # Boolean
-f = ["A", 5, True]  # Array
-g = (["A", 5, True], ["A", 5, True])  # Tuplas
-x = {"key": "123"}  # Objeto
+f = ["A", 5, True]  # Array/ list
+g = (["A", 5, True], ["A", 5, True])  # Tuple
+w = set({"A", 5, True})  # Sets
+x = {"key": "123"}  # Objetos/Diccionarios
 
 
 def aprender(framework: str):
-    if (framework == 'selenium'):
-        return 'Te recomiendo aprender Selenium-Python'
-    if (framework == 'cypress'):
-        return 'Te recomiendo aprender JavaScript con Promesas'
-    if (framework == 'playwright'):
-        return 'No hay nada mejor que un TypeScript y un Café'
-    return 'No reconozco este framework'
-
-
-def is_python(framework: str):
-    if (framework != 'selenium' or framework == 'playwright'):
-        return 'Sí puedes usar Python!'
+    if not isinstance(framework, str):
+        return 'NO SRING!'
     else:
-        return 'Nop, no se suele usar Python'
+        if (framework == 'selenium'):
+            return 'Te recomiendo aprender Selenium-Python'
+        if (framework == 'cypress'):
+            return 'Te recomiendo aprender JavaScript con Promesas'
+        if (framework == 'playwright'):
+            return 'No hay nada mejor que un TypeScript y un Café'
+        return 'No reconozco este framework'
 
 
-def get_all_tests_results(results):
-    for result in results:
-        while result == 'pass':
-            print("TC" + ": " + result)
+# print(aprender(True))
+
+ejemplo = ["pass", "pass", "fail", "pass", "fail",
+           "pass", "pass", "fail", "pass", "fail"]
 
 
-tests = ["pass", "pass", "pass", "pass", "fail", "fail"]
+def get_all_tests_results(results: list):
+    item = 1
+    while item < len(results):
+        for test in results:
+            print("TC" + str(item) + ": " + test)
+            item += 1
 
-get_all_tests_results(tests)
+
+get_all_tests_results(ejemplo)
