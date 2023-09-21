@@ -5,7 +5,7 @@ dataType = str | int | float | bool | list | tuple | set | dict
 
 
 class Expect:
-    # * Definición de funciones para interactuar con elementos de la página
+    # * Definición de funciones para realizar Asserciones con valores dados
     def __init__(self, actualValue: dataType):
         if not isinstance(actualValue, dataType):
             raise ValueError(f'DataType not supported. try: {dataType}')
