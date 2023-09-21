@@ -65,7 +65,7 @@ Según la Encuesta de desarrolladores de Stack Overflow 2021, Python es el terce
 2. **Clona el Proyecto con la Terminal de VSC**:
 
    ```
-   git clone https://github.com/upex-galaxy/selenium-python.git
+   git clone https://github.com/upex-galaxy/L1-selpy-demo.git
    ```
 
 3. `Opción VSCODE:` **Abrir el Command Palette (Ctrl+Shift+P) y realizar las acciones:**
