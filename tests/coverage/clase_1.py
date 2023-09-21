@@ -39,4 +39,8 @@ def get_all_tests_results(results: list):
             item += 1
 
 
-get_all_tests_results(ejemplo)
+# get_all_tests_results(ejemplo)
+def getDriver():
+    webdriver = 'webdriver X'
+    locator = 'locator X'
+    return (webdriver, locator)
