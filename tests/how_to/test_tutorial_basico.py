@@ -1,6 +1,6 @@
 import pytest
 # * Esta importación es clave para dar type al setup del fixture:
-# from tests.types import test
+from tests.types import test
 # * También puedes importar lo que necesites de los módulos y dependencias:
 from selenium.webdriver.common.keys import Keys
 
