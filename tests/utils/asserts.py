@@ -1,5 +1,5 @@
 import pytest
-from time import sleep
+from time import sleep as wait
 from selenium.webdriver.remote.webdriver import WebDriver
 dataType = str | int | float | bool | list | tuple | set | dict
 
@@ -16,28 +16,28 @@ class Expect:
         if not isinstance(expectedValue, dataType):
             raise ValueError(f'DataType not supported. try: {dataType}')
         assert self.value == expectedValue
-        sleep(1)
+        wait(1)
 
     def toNotBeEqual(self, expectedValue: dataType):
         if not isinstance(expectedValue, dataType):
             raise ValueError(f'DataType not supported. try: {dataType}')
         assert self.value != expectedValue
-        sleep(1)
+        wait(1)
 
     def toContain(self, innerValue: str):
         if not isinstance(self.value, str):
             raise ValueError(f'Value type not supported. Use String type')
         assert innerValue in self.value
-        sleep(1)
+        wait(1)
 
     def isTrue(self):
         if not isinstance(self.value, bool):
             raise ValueError(f'Value type not supported. Use Boolean type')
         assert self.value == True
-        sleep(1)
+        wait(1)
 
     def isFalse(self):
         if not isinstance(self.value, bool):
             raise ValueError(f'Value type not supported. Use Boolean type')
         assert self.value == False
-        sleep(1)
+        wait(1)

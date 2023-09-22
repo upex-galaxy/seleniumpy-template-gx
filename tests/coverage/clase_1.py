@@ -1,4 +1,5 @@
 # Esto es un Comentario.
+credentials = dict[str, str]
 
 # * Tipos de Datos Basicos:
 a = 1212  # Int
@@ -10,6 +11,24 @@ f = ["A", 5, True]  # Array/ list
 g = (["A", 5, True], ["A", 5, True])  # Tuple
 w = set({"A", 5, True})  # Sets
 x = {"key": "123"}  # Objetos/Diccionarios
+
+
+def validCredentials():
+    the = {
+        "username": "standard_user",
+        "password": "secret_sauce"
+    }
+    return the
+
+
+userData = validCredentials()
+
+
+def getUser(validUser: credentials):
+    return validUser["username"]
+
+
+print(getUser(userData))
 
 
 def aprender(framework: str):

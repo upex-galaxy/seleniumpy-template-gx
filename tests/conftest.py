@@ -4,6 +4,7 @@ import pytest
 # * A continuación, verás que los imports de nuestros archivos deben comenzar siempre desde el root directory "tests"
 # * En el archivo testbase en especial, se alojan todos  los TestUtils para nuestras pruebas.
 from selenium.webdriver.remote.webdriver import WebDriver
+from tests.testbase import *
 from tests.utils.drivers import Drivers
 from tests.utils.locators import Locators
 
@@ -85,6 +86,26 @@ def beforeEach(setWebDriver: WebDriver):
     assert title == "Swag Labs"
     yield (web, get)
     web.quit()
+
+
+@pytest.fixture
+def validUser():
+    data = {
+        "username": "standard_user",
+        "password": "secret_sauce"
+    }
+    return data
+
+
+@pytest.fixture
+def loginSuccessful(beforeEach: Test, validUser: dict[str, str]):
+    web, get = beforeEach
+    loginPage = LoginPageEly(web, get)
+    loginPage.enterUsername(validUser["username"])
+    loginPage.enterPassword(validUser["password"])
+    loginPage.submitLogin()
+    expect(web.current_url).toContain("/inventory")
+    yield (web, get)
 
 
 if __name__ == "__main__":

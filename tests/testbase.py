@@ -5,6 +5,7 @@ from tests.utils.locators import Locators
 from tests.utils.drivers import Drivers as Drivers
 from tests.utils.asserts import Expect as expect
 from time import sleep as wait
+from tests.pages.loginPageEly import LoginPage as LoginPageEly
 
 # * INTERFACES
 
