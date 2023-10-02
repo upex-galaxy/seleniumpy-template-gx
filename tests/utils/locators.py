@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.remote.webelement import WebElement
 
 
 class Locators:
@@ -67,3 +68,13 @@ class Locators:
     def byXpaths(self, element: str):
         # Buscar elemento por XPath
         return self.web.find_elements(By.XPATH, element)
+
+    # * ---- Smart Locators
+
+    def contains(self, text: str):
+        # Buscar element por dado innerText como contenedor (no estricto)
+        return self.web.find_elements(By.XPATH, f'//*[contains(text(),"{text}")]')
+
+    def withinElement_get(self, parentElement: WebElement, childElement: str):
+        # Buscar un element específico dentro de un elemento padre
+        return parentElement.find_element(By.CSS_SELECTOR, childElement)

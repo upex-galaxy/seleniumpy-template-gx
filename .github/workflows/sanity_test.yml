@@ -1,8 +1,9 @@
-name: Run Regression Tests
+name: Run Sanity Test
 
 on:
   push:
-    branches:
+    branches-ignore:
+      - QA
       - main
 
 jobs:
@@ -24,4 +25,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run pytest
-        run: pytest
+        run: pytest tests/coverage/shopping_cart/test_GX-37094_removeProducts.py

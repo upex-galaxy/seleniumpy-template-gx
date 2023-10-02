@@ -6,6 +6,13 @@
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.autopep8"
 	},
+	"[json]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.quickSuggestions": {
+			"strings": true
+		},
+		"editor.suggest.insertMode": "replace"
+	},
 	"editor.formatOnType": true,
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
