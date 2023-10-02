@@ -5,6 +5,7 @@ import pytest
 # * En el archivo testbase en especial, se alojan todos  los TestUtils para nuestras pruebas.
 from selenium.webdriver.remote.webdriver import WebDriver
 from tests.testbase import *
+from tests.utils.asserts import Expect
 from tests.utils.drivers import Drivers
 from tests.utils.locators import Locators
 
@@ -50,7 +51,6 @@ def web(setWebDriver: WebDriver):
 def get(web: WebDriver):
     # * Crear nueva instancia de las utilidades de prueba (test utils):
     get = Locators(web)
-
     return get
 
 
