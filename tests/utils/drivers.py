@@ -29,12 +29,12 @@ def headless(request: pytest.FixtureRequest):
 
 class Drivers:
 
-    def __init__(self, isHeadless: str) -> None:
+    def __init__(self, isHeadless=False) -> None:
         self.isHeadless = isHeadless
 
     def chromeDriver(self):
         # *  Se crea una instancia del Chrome
-        if self.isHeadless == "true":
+        if self.isHeadless == True:
             execution = ChromeOpt()
             execution.add_argument("--headless")
             return webdriver.Chrome(service=ChromiumService(ChromeDriverManager().install()), options=execution)
@@ -43,7 +43,7 @@ class Drivers:
 
     def edgeDriver(self):
         # *  Se crea una instancia del Microsoft Edge
-        if self.isHeadless == "true":
+        if self.isHeadless == True:
             execution = EdgeOpt()
             execution.add_argument("--headless")
             return webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=execution)
@@ -52,7 +52,7 @@ class Drivers:
 
     def firefoxDriver(self):
         # *  Se crea una instancia del FireFox
-        if self.isHeadless == "true":
+        if self.isHeadless == True:
             execution = FirefoxOpt()
             execution.add_argument("--headless")
             return webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=execution)

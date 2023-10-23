@@ -35,11 +35,13 @@ def headless(request: pytest.FixtureRequest):
 
 @pytest.fixture
 def setWebDriver(headless: str, browser: str):
+    # * Convertir el valor de headless a boolean:
+    run = True if headless == "true" else False
     # * Crear la instancia del Driver (dado el driver elegido por CLI):
     BROWSER_FUNCTIONS = {
-        "chrome": Drivers(headless).chromeDriver,
-        "edge": Drivers(headless).edgeDriver,
-        "firefox": Drivers(headless).firefoxDriver
+        "chrome": Drivers(run).chromeDriver,
+        "edge": Drivers(run).edgeDriver,
+        "firefox": Drivers(run).firefoxDriver
     }
     driver = BROWSER_FUNCTIONS.get(browser)
     if not driver:
