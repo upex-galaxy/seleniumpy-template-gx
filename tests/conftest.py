@@ -100,7 +100,7 @@ def validUser():
 @pytest.fixture
 def loginSuccessful(beforeEach: Test, validUser: dict[str, str]):
     web, get = beforeEach
-    loginPage = LoginPageEly(web, get)
+    loginPage = exLoginPage(web, get)
     loginPage.enterUsername(validUser["username"])
     loginPage.enterPassword(validUser["password"])
     loginPage.submitLogin()
