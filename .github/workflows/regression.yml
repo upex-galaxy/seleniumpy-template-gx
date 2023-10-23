@@ -25,4 +25,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: 🧪Selenium Run Pytest REGRESSION
-        run: pytest
+        run: pytest --headless=true
